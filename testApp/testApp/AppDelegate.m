@@ -24,8 +24,37 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //Snacktime - Story
+    
+    float sandwichAmount = 2.5f;
+    NSLog(@"How many sandwiches would you like for your snack, Jimmy?");
+    
+    
+    NSLog(@"I want %.1f sandwiches. We only have enough for %d.", sandwichAmount, (int)sandwichAmount);
+    
+    
+    NSLog(@"What kind of sandwich do you want?");
+    
+
+    int temp = 42;
+    int numTires = 4;
+    NSLog(@"temp=%d, numTires=%d", temp, numTires);
+    
+    float celcius = 37.5f;
+    NSLog(@"celcius=%.2f", celcius);
+    
+
+    
+    
+    
+    
+    
     return YES;
+    
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -54,4 +83,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+
 @end
+
+
+
+
+
+
+
+
