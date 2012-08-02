@@ -25,26 +25,35 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    //Snacktime - Story
+    //Lunchtime - Story
     
+    int chipBags = 0;
+    bool tuna = NO;
+    bool peanutButter = NO;
+    bool jelly = NO;
     float sandwichAmount = 2.5f;
-    NSLog(@"How many sandwiches would you like for your snack, Jimmy?");
     
     
-    NSLog(@"I want %.1f sandwiches. We only have enough for %d.", sandwichAmount, (int)sandwichAmount);
+    NSLog(@"How many sandwiches would you like for your lunch, Jimmy?");
     
     
-    NSLog(@"What kind of sandwich do you want?");
+    NSLog(@"Dad, I want %.1f sandwiches. We only have enough bread for %d, Jimmy.", sandwichAmount, (int)sandwichAmount);
     
-
-    int temp = 42;
-    int numTires = 4;
-    NSLog(@"temp=%d, numTires=%d", temp, numTires);
     
-    float celcius = 37.5f;
-    NSLog(@"celcius=%.2f", celcius);
+    NSLog(@"Dad, I want either a PBJ, peanut butter sandwich or tuna sandwich with chips?");
     
-
+    if (peanutButter && jelly) {
+        NSLog(@"We are going to have peanut butter and jelly sandwiches, Jimmy.");
+    }
+    else if (peanutButter && !jelly) {
+        NSLog(@"We are going to have peanut butter sandwiches, Jimmy.");
+    }
+    else if ((!peanutButter && tuna) || ((chipBags > 0) && tuna)) {
+        NSLog(@"We are going to tuna sandwiches with chips, Jimmy.");
+    }
+    else {
+        NSLog(@"Unfortunately, we don't have the proper ingredients for any of those choices, Jimmy.");
+    }
     
     
     
