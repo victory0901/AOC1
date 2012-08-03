@@ -28,6 +28,7 @@
     //Lunchtime - Story
     
     //Variables
+    int carrotSticks = 1;
     int chipBags = 0;
     bool tuna = NO;
     bool peanutButter = YES;
@@ -79,14 +80,15 @@
         }
     }
     
-    while (<#condition#>) {
-        <#statements#>
+    NSLog(@"Good Job! Now we need some veggies. Count the carrot sticks please, Jimmy.");
+    
+    //While loop that increments an int variable and outputs to the console.
+    while (carrotSticks <= 5) {
+        NSLog(@"We have %d carrot sticks.", carrotSticks);
+        carrotSticks++;
     }
     
-
-    
-    
-    
+    NSLog(@"Good Job! Now its time to enjoy our lunch!");
     
     return YES;
     
