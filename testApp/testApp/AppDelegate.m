@@ -27,34 +27,63 @@
     
     //Lunchtime - Story
     
+    //Variables
     int chipBags = 0;
     bool tuna = NO;
-    bool peanutButter = NO;
+    bool peanutButter = YES;
     bool jelly = NO;
-    float sandwichAmount = 2.5f;
+    float breadAmount = 2.5f;
+    float milkCups = 1.0f;
     
     
     NSLog(@"How many sandwiches would you like for your lunch, Jimmy?");
     
+    //Cast the float to an int
+    NSLog(@"Dad, I want %.1f sandwiches. We only have enough bread for %d, Jimmy.", breadAmount, (int)breadAmount);
     
-    NSLog(@"Dad, I want %.1f sandwiches. We only have enough bread for %d, Jimmy.", sandwichAmount, (int)sandwichAmount);
     
+    NSLog(@"Dad, I want either a PBJ/peanut butter sandwich with milk or tuna sandwich with chips?");
     
-    NSLog(@"Dad, I want either a PBJ, peanut butter sandwich or tuna sandwich with chips?");
-    
-    if (peanutButter && jelly) {
+    //Use an if, else if and else check using any of the data types of your choice
+    //AND, OR comparison. Use float, int and BOOL types. 
+    if ((peanutButter && jelly) && milkCups >= 1.0) {
         NSLog(@"We are going to have peanut butter and jelly sandwiches, Jimmy.");
     }
-    else if (peanutButter && !jelly) {
+    else if ((peanutButter && !jelly) && milkCups >= 1.0) {
         NSLog(@"We are going to have peanut butter sandwiches, Jimmy.");
     }
     else if ((!peanutButter && tuna) || ((chipBags > 0) && tuna)) {
-        NSLog(@"We are going to tuna sandwiches with chips, Jimmy.");
+        NSLog(@"We are going to tuna sandwiches with chips and juice, Jimmy.");
     }
     else {
         NSLog(@"Unfortunately, we don't have the proper ingredients for any of those choices, Jimmy.");
     }
     
+    NSLog(@"Here are some fruit snacks, Jimmy. Count them out please.");
+    
+    //Single for loop printing out values to the console
+    for (int x=1; x>0; x++) {
+        NSLog(@"We have %d fruit snacks", x);
+        if (x == 10)
+        {
+            break;
+        }
+    }
+
+    NSLog(@" Good job! We also gonna have some apples slices. Count them out please, Jimmy.");
+    
+    //Nested loop printing out values to the console
+    for (int apple = 1; apple >0 ; apple--) {
+        for ( int slices = 1; slices <= 4; slices++) {
+            NSLog(@"We have %d slices of apples.", slices);
+        }
+    }
+    
+    while (<#condition#>) {
+        <#statements#>
+    }
+    
+
     
     
     
