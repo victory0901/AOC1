@@ -74,7 +74,7 @@
     [self.view addSubview:publishedDate];
     
     //Create a UILabel for Summary
-    summary = [[UILabel alloc] initWithFrame:CGRectMake(274, 120, 100, 20)];
+    summary = [[UILabel alloc] initWithFrame:CGRectMake(334, 120, 100, 20)];
     if (summary != nil)
     {
         summary.backgroundColor = [UIColor greenColor];
@@ -83,6 +83,18 @@
         summary.textAlignment = UITextAlignmentLeft;
     }
     [self.view addSubview:summary];
+    
+    //Create a UILabel for Summary text
+    summaryText = [[UILabel alloc] initWithFrame:CGRectMake(154, 140, 460, 240)];
+    if (summaryText != nil)
+    {
+        summaryText.backgroundColor = [UIColor blueColor];
+        summaryText.text = @"Dr. Jake Rosen is the deputy chief medical examiner of New York City and is called to the construction site of a mall where a body is unearthed. Attorney Philomena “Manny” Manfreda is asked to represent the victim's family. Both Manny and Jake find themselves entagled in a mystery where a mounting body count hides both a shocking cover-up and a devastating love story.";
+        summaryText.textColor = [UIColor cyanColor];
+        summaryText.numberOfLines = 8;
+        summaryText.textAlignment = UITextAlignmentCenter;
+    }
+    [self.view addSubview:summaryText];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

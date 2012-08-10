@@ -17,6 +17,7 @@
     UILabel *published;
     UILabel *publishedDate;
     UILabel *summary;
+    UILabel *summaryText;
 }
 
 @end
