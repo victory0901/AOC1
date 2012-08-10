@@ -19,8 +19,8 @@
     //Change the background color of the view
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    //Create a UILabel and place it at the top of the view. This is used as the title of the book.
-    bookTitle = [[UILabel alloc] initWithFrame:CGRectMake(304, 10, 160, 20)];
+    //Create a UILabel and place it at the top of the view, used as the title of the book.
+    bookTitle = [[UILabel alloc] initWithFrame:CGRectMake(304, 10, 160, 40)];
     if (bookTitle != nil)
         {
             bookTitle.backgroundColor = [UIColor whiteColor];
@@ -29,6 +29,16 @@
         }
     [self.view addSubview:bookTitle];
     
+    //Create a UILabel for author of book
+    author = [[UILabel alloc] initWithFrame:CGRectMake(284, 60, 200, 20)];
+    if (author != nil)
+        {
+            author.backgroundColor = [UIColor blackColor];
+            author.text = @"Author: Michael Baden";
+            author.textColor = [UIColor whiteColor];
+            author.textAlignment = UITextAlignmentRight;
+        }
+    [self.view addSubview:author];
     
     
     [super viewDidLoad];
