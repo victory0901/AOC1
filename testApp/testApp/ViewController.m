@@ -29,16 +29,27 @@
         }
     [self.view addSubview:bookTitle];
     
-    //Create a UILabel for author of book
-    author = [[UILabel alloc] initWithFrame:CGRectMake(284, 60, 200, 20)];
+    //Create a UILabel for Author:
+    author = [[UILabel alloc] initWithFrame:CGRectMake(274, 60, 80, 20)];
     if (author != nil)
         {
             author.backgroundColor = [UIColor blackColor];
-            author.text = @"Author: Michael Baden";
+            author.text = @"Author: ";
             author.textColor = [UIColor whiteColor];
             author.textAlignment = UITextAlignmentRight;
         }
     [self.view addSubview:author];
+
+    //Create a UILabel for author name
+    authorName = [[UILabel alloc] initWithFrame:CGRectMake(354, 60, 140, 20)];
+    if (authorName != nil)
+    {
+        authorName.backgroundColor = [UIColor darkGrayColor];
+        authorName.text = @"Michael Baden";
+        authorName.textColor = [UIColor grayColor];
+        authorName.textAlignment = UITextAlignmentLeft;
+    }
+    [self.view addSubview:authorName];
     
     
     [super viewDidLoad];

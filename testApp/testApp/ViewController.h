@@ -13,6 +13,7 @@
 {
     UILabel *bookTitle;
     UILabel *author;
+    UILabel *authorName;
 }
 
 @end
