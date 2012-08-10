@@ -73,6 +73,16 @@
     }
     [self.view addSubview:publishedDate];
     
+    //Create a UILabel for Summary
+    summary = [[UILabel alloc] initWithFrame:CGRectMake(274, 120, 100, 20)];
+    if (summary != nil)
+    {
+        summary.backgroundColor = [UIColor greenColor];
+        summary.text = @"Summary: ";
+        summary.textColor = [UIColor purpleColor];
+        summary.textAlignment = UITextAlignmentLeft;
+    }
+    [self.view addSubview:summary];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
