@@ -51,6 +51,28 @@
     }
     [self.view addSubview:authorName];
     
+    //Create a UILabel for Published:
+    published = [[UILabel alloc] initWithFrame:CGRectMake(309, 90, 100, 20)];
+    if (published != nil)
+    {
+        published.backgroundColor = [UIColor redColor];
+        published.text = @"Published: ";
+        published.textColor = [UIColor orangeColor];
+        published.textAlignment = UITextAlignmentRight;
+    }
+    [self.view addSubview:published];
+    
+    //Create a UILabel for Published Date
+    publishedDate = [[UILabel alloc] initWithFrame:CGRectMake(409, 90, 50, 20)];
+    if (publishedDate != nil)
+    {
+        publishedDate.backgroundColor = [UIColor orangeColor];
+        publishedDate.text = @"2005";
+        publishedDate.textColor = [UIColor redColor];
+        publishedDate.textAlignment = UITextAlignmentLeft;
+    }
+    [self.view addSubview:publishedDate];
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
