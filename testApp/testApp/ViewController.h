@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+{
+    UILabel *bookTitle;
+}
+
 @end

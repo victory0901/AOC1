@@ -17,7 +17,19 @@
 - (void)viewDidLoad
 {
     //Change the background color of the view
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    //Create a UILabel and place it at the top of the view. This is used as the title of the book.
+    bookTitle = [[UILabel alloc] initWithFrame:CGRectMake(304, 10, 160, 20)];
+    if (bookTitle != nil)
+        {
+            bookTitle.backgroundColor = [UIColor whiteColor];
+            bookTitle.text = @"Remains Silent";
+            bookTitle.textAlignment = UITextAlignmentCenter;
+        }
+    [self.view addSubview:bookTitle];
+    
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
