@@ -2,8 +2,8 @@
 //  testAppTests.m
 //  testAppTests
 //
-//  Created by James Floyd on 8/1/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by James Floyd II on 8/10/12.
+//  Copyright (c) 2012 James Floyd II. All rights reserved.
 //
 
 #import "testAppTests.h"
