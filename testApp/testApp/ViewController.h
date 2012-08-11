@@ -18,6 +18,8 @@
     UILabel *publishedDate;
     UILabel *summary;
     UILabel *summaryText;
+    UILabel *listText;
+    UILabel *list;
 }
 
 @end

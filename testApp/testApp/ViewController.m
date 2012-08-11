@@ -89,14 +89,12 @@
     if (summaryText != nil)
     {
         summaryText.backgroundColor = [UIColor blueColor];
-        summaryText.text = @"Dr. Jake Rosen is the deputy chief medical examiner of New York City and is called to the construction site of a mall where a body is unearthed. Attorney Philomena “Manny” Manfreda is asked to represent the victim's family. Both Manny and Jake find themselves entagled in a mystery where a mounting body count hides both a shocking cover-up and a devastating love story.";
+        summaryText.text = @"Medical Examiner, Dr. Jake Rosen is called to the construction site of a mall where a body is unearthed. Attorney Philomena Manfreda is asked to represent the victim's family. Both Manny and Jake find themselves entagled in a mystery where a mounting body count hides both a shocking cover-up and a devastating love story.";
         summaryText.textColor = [UIColor cyanColor];
         summaryText.numberOfLines = 8;
         summaryText.textAlignment = UITextAlignmentCenter;
     }
     [self.view addSubview:summaryText];
-    
-    
     
     //NSArray of 5 items talked about in the book
     NSArray *itemList = [[NSArray alloc] initWithObjects: @"Murder, ", @"Forensics, ",@"Cover-up, ", @"Mystery, ", @"Romance", nil];
@@ -108,6 +106,29 @@
     for (int i=0; i < [itemList count]; i++) {
         [mutableStringList appendString: [itemList objectAtIndex:i]];
     }
+    
+    //Create a UILabel for List of Items
+    list = [[UILabel alloc] initWithFrame:CGRectMake(334, 400, 100, 20)];
+    if (list != nil)
+    {
+        list.backgroundColor = [UIColor magentaColor];
+        list.text = @"List of Items";
+        list.textColor = [UIColor yellowColor];
+        list.textAlignment = UITextAlignmentCenter;
+    }
+    [self.view addSubview:list];
+    
+    //Create a UILabel for List Text
+    listText = [[UILabel alloc] initWithFrame:CGRectMake(269, 420, 230, 80)];
+    if (listText != nil)
+    {
+        listText.backgroundColor = [UIColor brownColor];
+        listText.text = mutableStringList;
+        listText.textColor = [UIColor grayColor];
+        listText.textAlignment = UITextAlignmentCenter;
+        listText.numberOfLines = 2;
+    }
+    [self.view addSubview:listText];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
