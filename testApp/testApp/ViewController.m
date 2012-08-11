@@ -114,7 +114,7 @@
         list.backgroundColor = [UIColor magentaColor];
         list.text = @"List of Items";
         list.textColor = [UIColor yellowColor];
-        list.textAlignment = UITextAlignmentCenter;
+        list.textAlignment = UITextAlignmentLeft;
     }
     [self.view addSubview:list];
     
