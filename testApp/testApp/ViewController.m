@@ -96,8 +96,18 @@
     }
     [self.view addSubview:summaryText];
     
+    
+    
     //NSArray of 5 items talked about in the book
-    NSArray *items = [[NSArray alloc] initWithObjects: @"Murder, ", @"Forensics, ",@"Cover-up, ", @"Mystery, ", @"Romance", nil];
+    NSArray *itemList = [[NSArray alloc] initWithObjects: @"Murder, ", @"Forensics, ",@"Cover-up, ", @"Mystery, ", @"Romance", nil];
+    
+    //NSMutableString 
+    NSMutableString *mutableStringList = [[NSMutableString alloc] init];
+    
+    //Loop through the NSArray you created and append each of these items to your NSMutableString
+    for (int i=0; i < [itemList count]; i++) {
+        [mutableStringList appendString: [itemList objectAtIndex:i]];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
