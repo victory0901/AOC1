@@ -96,6 +96,9 @@
     }
     [self.view addSubview:summaryText];
     
+    //NSArray of 5 items talked about in the book
+    NSArray *items = [[NSArray alloc] initWithObjects: @"Murder, ", @"Forensics, ",@"Cover-up, ", @"Mystery, ", @"Romance", nil];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
