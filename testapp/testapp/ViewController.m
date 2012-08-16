@@ -21,6 +21,14 @@
     return intOne + intTwo;
 }
 
+//Compare Function, returns BOOL when comparing two BOOLs
+-(BOOL)Compare:(NSInteger)boolOne BoolTwo:(NSInteger)boolTwo
+{
+    return (boolOne == boolTwo);
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
