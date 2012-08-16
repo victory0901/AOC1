@@ -27,7 +27,13 @@
     return (boolOne == boolTwo);
 }
 
-
+//Append function, returns an appended String when append a NSString to another
+-(NSString*)Append:(NSString*)stringOne stringTwo:(NSString*)stringTwo
+{
+    NSMutableString* stringAppended = [[NSMutableString alloc] initWithFormat:stringOne];
+    [stringAppended appendString:stringTwo];
+    return stringAppended;
+}
 
 - (void)viewDidLoad
 {
