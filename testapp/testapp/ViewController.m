@@ -14,6 +14,13 @@
 
 @implementation ViewController
 
+
+//Add Function, returns the sum of two NSIntergers
+- (int)Add:(NSInteger)intOne intTwo:(NSInteger)intTwo
+{
+    return intOne + intTwo;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
