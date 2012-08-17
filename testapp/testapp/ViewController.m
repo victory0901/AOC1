@@ -53,7 +53,7 @@
     [self DisplayAlertWithString:string];
     
     //Use Add function and set return to variable
-    addSum = [self Add:1 intTwo:1];
+    int addSum = [self Add:1 intTwo:1];
     
     //Bundle addSum into NSNumber and convert to NSString
     NSNumber *addSumBundle = [[NSNumber alloc] initWithInt:addSum];
@@ -94,5 +94,6 @@
         return YES;
     }
 }
+
 
 @end
