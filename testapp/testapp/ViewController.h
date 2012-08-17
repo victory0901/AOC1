@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController
 {
-
+    int addSum;
 }
 
 - (int)Add:(NSInteger)intOne intTwo:(NSInteger)intTwo;

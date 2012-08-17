@@ -52,6 +52,17 @@
     NSString *string = [self Append:@"James has won the " stringTwo:@"Powerball."];
     [self DisplayAlertWithString:string];
     
+    //Use Add function and set return to variable
+    addSum = [self Add:1 intTwo:1];
+    
+    //Bundle addSum into NSNumber and convert to NSString
+    NSNumber *addSumBundle = [[NSNumber alloc] initWithInt:addSum];
+    NSString *addSumString = [addSum stringValue];
+    
+    //
+    
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
