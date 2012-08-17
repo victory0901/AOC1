@@ -30,7 +30,7 @@
 //Append function, returns an appended String when append a NSString to another
 -(NSString*)Append:(NSString*)stringOne stringTwo:(NSString*)stringTwo
 {
-    NSMutableString* stringAppended = [[NSMutableString alloc] initWithFormat:stringOne];
+    NSMutableString* stringAppended = [[NSMutableString alloc] initWithString:stringOne];
     [stringAppended appendString:stringTwo];
     return stringAppended;
 }
