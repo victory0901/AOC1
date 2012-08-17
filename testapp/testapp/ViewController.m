@@ -49,7 +49,7 @@
 - (void)viewDidLoad
 {
     //Display UIAlertView with appended string using DisplayAlertWithString
-    NSString *string = [self Append:@"James has won the " stringTwo:@"Powerball."];
+    NSString *string = [self Append:@"James has won the " stringTwo:@"Powerball"];
     [self DisplayAlertWithString:string];
     
     //Use Add function and set return to variable
@@ -57,9 +57,13 @@
     
     //Bundle addSum into NSNumber and convert to NSString
     NSNumber *addSumBundle = [[NSNumber alloc] initWithInt:addSum];
-    NSString *addSumString = [addSum stringValue];
+    NSString *addSumString = [addSumBundle stringValue];
     
-    //
+    //Display UIAlertView with message, "The number is "
+    NSString *stringTwo = [self Append:@"The number is " stringTwo:addSumString];
+    [self DisplayAlertWithString:stringTwo];
+    
+    
     
     
     
