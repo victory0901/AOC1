@@ -22,9 +22,9 @@
 }
 
 //Compare Function, returns BOOL when comparing two BOOLs
--(BOOL)Compare:(NSInteger)boolOne BoolTwo:(NSInteger)boolTwo
+-(BOOL)Compare:(NSInteger)compareOne compareTwo:(NSInteger)compareTwo
 {
-    return (boolOne == boolTwo);
+    return (compareOne == compareTwo);
 }
 
 //Append function, returns an appended String when append a NSString to another
@@ -63,7 +63,16 @@
     NSString *stringTwo = [self Append:@"The number is " stringTwo:addSumString];
     [self DisplayAlertWithString:stringTwo];
     
+    //Use Compare function, if Compare equal to YES, display UIAlertView
+    NSInteger numOne = 2;
+    NSInteger numTwo = 2;
+    BOOL compareOutcome = [self Compare:numOne compareTwo:numTwo];
     
+    if (compareOutcome == YES)
+    {
+        NSString *message = [NSString stringWithFormat:@"Are the integers %i and %i the same? %@!", numOne, numTwo, (compareOutcome ? @"YES" : @"NO")];
+        [self DisplayAlertWithString:message];
+    }
     
     
     
