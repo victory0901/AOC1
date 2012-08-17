@@ -35,8 +35,23 @@
     return stringAppended;
 }
 
+//DisplayAlertWithString function, shows alert 
+-(void)DisplayAlertWithString:(NSString*)nsString
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:nsString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil ];
+    
+    if (alertView != nil)
+    {
+        [alertView show];
+    }
+}
+
 - (void)viewDidLoad
 {
+    //Display UIAlertView with appended string using DisplayAlertWithString
+    NSString *string = [self Append:@"James has won the " stringTwo:@"Powerball."];
+    [self DisplayAlertWithString:string];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
