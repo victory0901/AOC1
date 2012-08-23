@@ -1,14 +1,14 @@
 //
-//  testappTests.m
-//  testappTests
+//  testAppTests.m
+//  testAppTests
 //
-//  Created by James Floyd II on 8/16/12.
+//  Created by James Floyd II on 8/23/12.
 //  Copyright (c) 2012 James Floyd II. All rights reserved.
 //
 
-#import "testappTests.h"
+#import "testAppTests.h"
 
-@implementation testappTests
+@implementation testAppTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in testappTests");
+    STFail(@"Unit tests are not implemented yet in testAppTests");
 }
 
 @end
