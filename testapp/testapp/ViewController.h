@@ -15,6 +15,10 @@
     UIButton *login;
     UIButton *info;
     UIButton *showDate;
+    NSDate *date;
+    NSDateFormatter *dateFormatter;
+    NSString *currentDate;
+    UIAlertView *alertView;
 }
-
+-(void)onClick:(UIButton*)button;
 @end

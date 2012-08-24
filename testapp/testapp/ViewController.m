@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 
+#define BUTTON_ZERO 0
+#define BUTTON_ONE 1
+#define BUTTON_TWO 2
+
 @interface ViewController ()
 
 @end
@@ -34,6 +38,8 @@
     {
         login.frame = CGRectMake(150.0f, 70.0f, 100.0f, 30.0f);
         [login setTitle:@"Login" forState:UIControlStateNormal];
+        [login addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        login.tag = BUTTON_ZERO;
         [self.view addSubview:login];
     }
     
@@ -48,30 +54,58 @@
         [self.view addSubview:loginStatus];
     }
     
-    //Create UIButton for Information
-    info = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    if (info != nil)
-    {
-        info.frame = CGRectMake(10.0f, 350.0f, 25.0f, 25.0f);
-        [self.view addSubview:info];
-    }
-    
     //Create UIButton for Show Date
     showDate = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (showDate != nil)
     {
         showDate.frame = CGRectMake(10.0f, 250.0f, 100.0f, 30.0f);
         [showDate setTitle:@"Show Date" forState:UIControlStateNormal];
+        showDate.tag = BUTTON_ONE;
         [self.view addSubview:showDate];
     }
     
+    //Create UIButton for Information
+    info = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    if (info != nil)
+    {
+        info.frame = CGRectMake(10.0f, 350.0f, 25.0f, 25.0f);
+        info.tag = BUTTON_TWO;
+        [self.view addSubview:info];
+    }
     
-    
-    
-    
+    //Create NSDate Object for current date and time
+    date = [NSDate date];
+    dateFormatter = [[NSDateFormatter alloc] init];
+    if (dateFormatter !=nil)
+    {
+        [dateFormatter setDateFormat:@"yyyy.MM.dd 'at' hh:mm a zzzz"];
+        currentDate = [dateFormatter stringFromDate:date];
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)onClick:(UIButton*)button
+{
+    if (button.tag == 0)
+    {
+       
+    }
+    
+    else if (button.tag == 1)
+    {
+        alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:(NSString*) currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        if (alertView != 0)
+        {
+            [alertView show];
+        }
+    }
+    
+    else if (button.tag == 2)
+    {
+    
+    }
 }
 
 - (void)viewDidUnload
