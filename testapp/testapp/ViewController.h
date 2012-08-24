@@ -21,6 +21,7 @@
     UIAlertView *alertView;
     UITextField *textField;
     NSString *userText;
+    UILabel *infoLabel;
 }
 -(void)onClick:(UIButton*)button;
 @end

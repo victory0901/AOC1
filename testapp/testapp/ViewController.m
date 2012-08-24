@@ -76,9 +76,10 @@
     //Create NSDate Object for current date and time
     date = [NSDate date];
     dateFormatter = [[NSDateFormatter alloc] init];
-    if (dateFormatter !=nil)
+    if (dateFormatter != nil)
     {
-        [dateFormatter setDateFormat:@"yyyy.MM.dd 'at' hh:mm a zzzz"];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
         currentDate = [dateFormatter stringFromDate:date];
     }
     
@@ -88,11 +89,23 @@
     if (info != nil)
     {
         info.frame = CGRectMake(10.0f, 350.0f, 25.0f, 25.0f);
+        [info addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         info.tag = BUTTON_TWO;
         [self.view addSubview:info];
     }
     
-    
+    //Create UILabel for Information
+    infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 375.0f, 320.0f, 50.0f)];
+    if (infoLabel != nil)
+    {
+        infoLabel.text = @"";
+        infoLabel.textColor = [UIColor purpleColor];
+        infoLabel.numberOfLines = 2;
+        infoLabel.textAlignment = UITextAlignmentCenter;
+        infoLabel.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:infoLabel];
+        
+    }
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -115,8 +128,8 @@
     
     else if (button.tag == 1)
     {
-        alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:(NSString*)currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        if (alertView != 0)
+        alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        if (alertView != nil)
         {
             [alertView show];
         }
@@ -124,8 +137,9 @@
     
     else if (button.tag == 2)
     {
-        
+        infoLabel.text = @"This application was created by: James Floyd II";
     }
+    
 }
 
 - (void)viewDidUnload
