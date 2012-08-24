@@ -59,6 +59,7 @@
         loginStatus.numberOfLines = 2;
         loginStatus.backgroundColor = [UIColor grayColor];
         loginStatus.textAlignment = UITextAlignmentCenter;
+        loginStatus.textColor = [UIColor blueColor];
         [self.view addSubview:loginStatus];
     }
     
@@ -78,8 +79,7 @@
     dateFormatter = [[NSDateFormatter alloc] init];
     if (dateFormatter != nil)
     {
-        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterLongStyle];
+        [dateFormatter setDateFormat:@"MMMM dd, yyyy hh:mm aa"];
         currentDate = [dateFormatter stringFromDate:date];
     }
     
@@ -119,19 +119,31 @@
         if (userText.length != 0)
         {
             loginStatus.text = [NSString stringWithFormat:@"User: %@ has been logged in", userText];
+            loginStatus.textColor = [UIColor greenColor];
         }
         else
         {
             loginStatus.text = @"Username cannot be empty";
+            loginStatus.textColor = [UIColor redColor];
         }
     }
     
     else if (button.tag == 1)
     {
-        alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        if (alertView != nil)
+        //Create NSDate Object for current date and time
+        date = [NSDate date];
+        dateFormatter = [[NSDateFormatter alloc] init];
+        if (dateFormatter != nil)
         {
+            [dateFormatter setDateFormat:@"MMM dd, yyyy hh:mm aa"];
+            currentDate = [dateFormatter stringFromDate:date];
+        
+        
+            alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            if (alertView != nil)
+            {
             [alertView show];
+            }
         }
     }
     
