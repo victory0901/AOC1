@@ -19,6 +19,8 @@
     NSDateFormatter *dateFormatter;
     NSString *currentDate;
     UIAlertView *alertView;
+    UITextField *textField;
+    NSString *userText;
 }
 -(void)onClick:(UIButton*)button;
 @end

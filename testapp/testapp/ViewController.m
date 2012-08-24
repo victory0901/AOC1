@@ -32,13 +32,21 @@
         [self.view addSubview:username];
     }
     
+    //Create UITextField for Full Name
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(100.0f, 20.0f, 150.0f, 30.0f)];
+    if (textField != nil)
+    {
+        textField.borderStyle = UITextBorderStyleRoundedRect;
+        [self.view addSubview:textField];
+    }
+    
     //Create UIButton for Login
     login = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (login != nil)
     {
         login.frame = CGRectMake(150.0f, 70.0f, 100.0f, 30.0f);
         [login setTitle:@"Login" forState:UIControlStateNormal];
-        [login addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
+        [login addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         login.tag = BUTTON_ZERO;
         [self.view addSubview:login];
     }
@@ -60,9 +68,20 @@
     {
         showDate.frame = CGRectMake(10.0f, 250.0f, 100.0f, 30.0f);
         [showDate setTitle:@"Show Date" forState:UIControlStateNormal];
+        [showDate addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         showDate.tag = BUTTON_ONE;
         [self.view addSubview:showDate];
     }
+
+    //Create NSDate Object for current date and time
+    date = [NSDate date];
+    dateFormatter = [[NSDateFormatter alloc] init];
+    if (dateFormatter !=nil)
+    {
+        [dateFormatter setDateFormat:@"yyyy.MM.dd 'at' hh:mm a zzzz"];
+        currentDate = [dateFormatter stringFromDate:date];
+    }
+    
     
     //Create UIButton for Information
     info = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -73,14 +92,7 @@
         [self.view addSubview:info];
     }
     
-    //Create NSDate Object for current date and time
-    date = [NSDate date];
-    dateFormatter = [[NSDateFormatter alloc] init];
-    if (dateFormatter !=nil)
-    {
-        [dateFormatter setDateFormat:@"yyyy.MM.dd 'at' hh:mm a zzzz"];
-        currentDate = [dateFormatter stringFromDate:date];
-    }
+    
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -90,12 +102,20 @@
 {
     if (button.tag == 0)
     {
-       
+        userText = [textField text];
+        if (userText.length != 0)
+        {
+            loginStatus.text = [NSString stringWithFormat:@"User: %@ has been logged in", userText];
+        }
+        else
+        {
+            loginStatus.text = @"Username cannot be empty";
+        }
     }
     
     else if (button.tag == 1)
     {
-        alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:(NSString*) currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:(NSString*)currentDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         if (alertView != 0)
         {
             [alertView show];
@@ -104,7 +124,7 @@
     
     else if (button.tag == 2)
     {
-    
+        
     }
 }
 
