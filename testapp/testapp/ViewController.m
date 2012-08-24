@@ -44,7 +44,7 @@
     login = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     if (login != nil)
     {
-        login.frame = CGRectMake(150.0f, 70.0f, 100.0f, 30.0f);
+        login.frame = CGRectMake(150.0f, 55.0f, 100.0f, 30.0f);
         [login setTitle:@"Login" forState:UIControlStateNormal];
         [login addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
         login.tag = BUTTON_ZERO;
